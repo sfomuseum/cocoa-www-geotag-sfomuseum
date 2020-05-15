@@ -1,0 +1,44 @@
+//
+//  Config.xcconfig
+//  GeoTagMac
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// no, really...
+// https://stackoverflow.com/questions/21317844/how-do-i-configure-full-urls-in-xcconfig-files
+
+SLASH=/
+
+NEXTZEN_API_KEY = 
+
+ENABLE_PLACEHOLDER = YES
+
+PLACEHOLDER_ENDPOINT = 
+
+ENABLE_OEMBED = YES
+
+OEMBED_ENDPOINTS = 
+
+ENABLE_PROXY_TILES = NO
+
+WRITER_URI = whosonfirst:$(SLASH)/?writer={whosonfirst_writer}&reader={whosonfirst_reader}&update=1&update=1&source=sfomuseum
+
+WHOSONFIRST_WRITER_URI = featurecollection-io:$(SLASH)/?count_features=2
+
+WHOSONFIRST_READER_URI = 
+
+OAUTH2_AUTH_URL = https:$(SLASH)/github.com/login/oauth/authorize
+
+OAUTH2_TOKEN_URL = https:$(SLASH)/github.com/login/oauth/access_token
+
+OAUTH2_CLIENT_ID = 
+
+OAUTH2_CLIENT_SECRET = 
+
+OAUTH2_SCOPE = repo
+
+USE_LOCAL_SERVER = YES
+
+SERVER_URI = http:$(SLASH)/localhost:8080

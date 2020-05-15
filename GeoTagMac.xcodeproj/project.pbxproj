@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AA26A98243E9CBD00C9201B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA26A97243E9CBD00C9201B /* AppDelegate.swift */; };
+		4AA26A9A243E9CBD00C9201B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA26A99243E9CBD00C9201B /* ViewController.swift */; };
+		4AA26A9C243E9CC000C9201B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA26A9B243E9CC000C9201B /* Assets.xcassets */; };
+		4AA26A9F243E9CC000C9201B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA26A9D243E9CC000C9201B /* Main.storyboard */; };
+		4AA26AAB243E9CC000C9201B /* GeoTagMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA26AAA243E9CC000C9201B /* GeoTagMacTests.swift */; };
+		4AA26AD0243EA01A00C9201B /* server.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4AA26ACF243EA01A00C9201B /* server.bundle */; };
+		4AFB27FD246CA2A0006FBC56 /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4AFB27FC246CA2A0006FBC56 /* OAuthSwift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4AA26AA7243E9CC000C9201B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AA26A8C243E9CBC00C9201B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AA26A93243E9CBC00C9201B;
+			remoteInfo = GeoTagMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4AA26A94243E9CBC00C9201B /* GeoTagMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoTagMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AA26A97243E9CBD00C9201B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4AA26A99243E9CBD00C9201B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4AA26A9B243E9CC000C9201B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AA26A9E243E9CC000C9201B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4AA26AA0243E9CC000C9201B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA26AA1243E9CC000C9201B /* GeoTagMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeoTagMac.entitlements; sourceTree = "<group>"; };
+		4AA26AA6243E9CC000C9201B /* GeoTagMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoTagMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AA26AAA243E9CC000C9201B /* GeoTagMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoTagMacTests.swift; sourceTree = "<group>"; };
+		4AA26AAC243E9CC000C9201B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA26ACF243EA01A00C9201B /* server.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = server.bundle; sourceTree = "<group>"; };
+		4AB92404243FC85900A3F098 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AA26A91243E9CBC00C9201B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AFB27FD246CA2A0006FBC56 /* OAuthSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AA26AA3243E9CC000C9201B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AA26A8B243E9CBC00C9201B = {
+			isa = PBXGroup;
+			children = (
+				4AA26ACF243EA01A00C9201B /* server.bundle */,
+				4AA26A96243E9CBC00C9201B /* GeoTagMac */,
+				4AA26AA9243E9CC000C9201B /* GeoTagMacTests */,
+				4AA26A95243E9CBC00C9201B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AA26A95243E9CBC00C9201B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AA26A94243E9CBC00C9201B /* GeoTagMac.app */,
+				4AA26AA6243E9CC000C9201B /* GeoTagMacTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AA26A96243E9CBC00C9201B /* GeoTagMac */ = {
+			isa = PBXGroup;
+			children = (
+				4AA26A97243E9CBD00C9201B /* AppDelegate.swift */,
+				4AB92404243FC85900A3F098 /* Config.xcconfig */,
+				4AA26A99243E9CBD00C9201B /* ViewController.swift */,
+				4AA26A9B243E9CC000C9201B /* Assets.xcassets */,
+				4AA26A9D243E9CC000C9201B /* Main.storyboard */,
+				4AA26AA0243E9CC000C9201B /* Info.plist */,
+				4AA26AA1243E9CC000C9201B /* GeoTagMac.entitlements */,
+			);
+			path = GeoTagMac;
+			sourceTree = "<group>";
+		};
+		4AA26AA9243E9CC000C9201B /* GeoTagMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				4AA26AAA243E9CC000C9201B /* GeoTagMacTests.swift */,
+				4AA26AAC243E9CC000C9201B /* Info.plist */,
+			);
+			path = GeoTagMacTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AA26A93243E9CBC00C9201B /* GeoTagMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AA26AAF243E9CC000C9201B /* Build configuration list for PBXNativeTarget "GeoTagMac" */;
+			buildPhases = (
+				4AA26A90243E9CBC00C9201B /* Sources */,
+				4AA26A91243E9CBC00C9201B /* Frameworks */,
+				4AA26A92243E9CBC00C9201B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeoTagMac;
+			packageProductDependencies = (
+				4AFB27FC246CA2A0006FBC56 /* OAuthSwift */,
+			);
+			productName = GeoTagMac;
+			productReference = 4AA26A94243E9CBC00C9201B /* GeoTagMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4AA26AA5243E9CC000C9201B /* GeoTagMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AA26AB2243E9CC000C9201B /* Build configuration list for PBXNativeTarget "GeoTagMacTests" */;
+			buildPhases = (
+				4AA26AA2243E9CC000C9201B /* Sources */,
+				4AA26AA3243E9CC000C9201B /* Frameworks */,
+				4AA26AA4243E9CC000C9201B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AA26AA8243E9CC000C9201B /* PBXTargetDependency */,
+			);
+			name = GeoTagMacTests;
+			productName = GeoTagMacTests;
+			productReference = 4AA26AA6243E9CC000C9201B /* GeoTagMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AA26A8C243E9CBC00C9201B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "SFO Museum";
+				TargetAttributes = {
+					4AA26A93243E9CBC00C9201B = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					4AA26AA5243E9CC000C9201B = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 4AA26A93243E9CBC00C9201B;
+					};
+				};
+			};
+			buildConfigurationList = 4AA26A8F243E9CBC00C9201B /* Build configuration list for PBXProject "GeoTagMac" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AA26A8B243E9CBC00C9201B;
+			packageReferences = (
+				4AFB27FB246CA2A0006FBC56 /* XCRemoteSwiftPackageReference "OAuthSwift" */,
+			);
+			productRefGroup = 4AA26A95243E9CBC00C9201B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AA26A93243E9CBC00C9201B /* GeoTagMac */,
+				4AA26AA5243E9CC000C9201B /* GeoTagMacTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AA26A92243E9CBC00C9201B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA26AD0243EA01A00C9201B /* server.bundle in Resources */,
+				4AA26A9C243E9CC000C9201B /* Assets.xcassets in Resources */,
+				4AA26A9F243E9CC000C9201B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AA26AA4243E9CC000C9201B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AA26A90243E9CBC00C9201B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA26A9A243E9CBD00C9201B /* ViewController.swift in Sources */,
+				4AA26A98243E9CBD00C9201B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AA26AA2243E9CC000C9201B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA26AAB243E9CC000C9201B /* GeoTagMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4AA26AA8243E9CC000C9201B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AA26A93243E9CBC00C9201B /* GeoTagMac */;
+			targetProxy = 4AA26AA7243E9CC000C9201B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4AA26A9D243E9CC000C9201B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AA26A9E243E9CC000C9201B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4AA26AAD243E9CC000C9201B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4AA26AAE243E9CC000C9201B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		4AA26AB0243E9CC000C9201B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AB92404243FC85900A3F098 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GeoTagMac/GeoTagMacDebug.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68966928SB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = GeoTagMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.sfomuseum.collection.GeoTagMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4AA26AB1243E9CC000C9201B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AB92404243FC85900A3F098 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GeoTagMac/GeoTagMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68966928SB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = GeoTagMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.sfomuseum.collection.GeoTagMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4AA26AB3243E9CC000C9201B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68966928SB;
+				INFOPLIST_FILE = GeoTagMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sfomuseum.collection.GeoTagMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoTagMac.app/Contents/MacOS/GeoTagMac";
+			};
+			name = Debug;
+		};
+		4AA26AB4243E9CC000C9201B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68966928SB;
+				INFOPLIST_FILE = GeoTagMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sfomuseum.collection.GeoTagMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoTagMac.app/Contents/MacOS/GeoTagMac";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AA26A8F243E9CBC00C9201B /* Build configuration list for PBXProject "GeoTagMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AA26AAD243E9CC000C9201B /* Debug */,
+				4AA26AAE243E9CC000C9201B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AA26AAF243E9CC000C9201B /* Build configuration list for PBXNativeTarget "GeoTagMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AA26AB0243E9CC000C9201B /* Debug */,
+				4AA26AB1243E9CC000C9201B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AA26AB2243E9CC000C9201B /* Build configuration list for PBXNativeTarget "GeoTagMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AA26AB3243E9CC000C9201B /* Debug */,
+				4AA26AB4243E9CC000C9201B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4AFB27FB246CA2A0006FBC56 /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4AFB27FC246CA2A0006FBC56 /* OAuthSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AFB27FB246CA2A0006FBC56 /* XCRemoteSwiftPackageReference "OAuthSwift" */;
+			productName = OAuthSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4AA26A8C243E9CBC00C9201B /* Project object */;
+}
