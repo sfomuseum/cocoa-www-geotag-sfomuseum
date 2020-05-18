@@ -76,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // this is necessary until I finesse how the crumb handler works
         // with writer/api.go (20200513/thisisaaronland)
         
-        server_args["-disable-writer-crumb"] = "true"
+        server_args["disable-writer-crumb"] = "true"
         
         guard let nextzen_apikey = Bundle.main.object(forInfoDictionaryKey: "NextzenAPIKey") as? String else {
             
@@ -207,6 +207,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NotificationCenter.default.post(name: Notification.Name("serverError"), object: error)
             return
         }
+        
+        // please poll until server_url responds with 200
+        print("SLEEPING")
+        sleep(2)
         
         NotificationCenter.default.post(name: Notification.Name("serverListening"), object: url!)
     }

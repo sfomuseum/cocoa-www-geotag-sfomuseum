@@ -32,7 +32,7 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
         let wk_conf = WKWebViewConfiguration()
 
         wk_conf.processPool = WKProcessPool()
-        wk_conf.websiteDataStore = WKWebsiteDataStore.default()
+        wk_conf.websiteDataStore = WKWebsiteDataStore.nonPersistent() // .default()
                 
         let wk_controller = WKUserContentController()
         
@@ -100,14 +100,33 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
     }
     
     func loadApplication(url:URL) {
+        
+        print("LOAD APPLICATION")
+        
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            records.forEach { record in
+                
+                if record.displayName == "localhost" || record.displayName == "127.0.0.1" {
+                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+                print("[WebCacheCleaner] Record \(record) deleted")
+                }
+            }
+        }
+        
         let request = URLRequest(url: url)
         webView.load(request)
-        
+    }
+    
+    func webView(_ webView: WKWebView,
+      didFinish navigation: WKNavigation!) {
+      print("FINISHED LOADING WEBPAGE")
+
         self.getAccessToken()
     }
     
     func getAccessToken(){
         
+        print("GET ACCESS TOKEN")
         // check for locally stored token
         // ensure token validity
         
@@ -170,8 +189,10 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
                                 
                 switch result {
                 case .success(let (credential, _, _)):
+                    print("GOT ACCESS TOKEN")
                     self.oauth2_access_token = credential.oauthToken
-                    self.executeJS(target: "sfomuseum.webkit.setAuthOkay", body: "")
+                    self.executeJS(target: "sfomuseum.webkit.setAccessToken", body: credential.oauthToken)
+
                 case .failure(let error):
                     self.showAlert(message:error.localizedDescription)
                     return
