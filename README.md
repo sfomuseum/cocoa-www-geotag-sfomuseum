@@ -1,6 +1,6 @@
 # cocoa-www-geotag-sfomuseum
 
-Experimental work to wrap the [sfomuseum/go-www-geotag](https://github.com/sfomuseum/go-www-geotag) application in standalone MacOS binary.
+Experimental work to wrap the [sfomuseum/go-www-geotag-sfomuseum](https://github.com/sfomuseum/go-www-geotag-sfomuseum) application in standalone MacOS binary.
 
 ## Important
 
