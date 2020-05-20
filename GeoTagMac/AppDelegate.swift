@@ -237,11 +237,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 // print("WHAT IS ", path)
                 return
             }
-            
-            if url.host == "oauth2" {
+                 
+            switch url.host {
+            case "oauth2":
                 OAuthSwift.handle(url: url)
+            case "oembed":
+                
+                let params = url.queryParameters
+                let oembed_url = params?["url"] as String?
+                
+                if oembed_url != nil {
+                    NotificationCenter.default.post(name: Notification.Name("oembedURL"), object: oembed_url!)
+                }
+                
+            default:
+                print("Unhandled protocol request", url)
             }
         }
     }
     
+}
+
+extension URL {
+    public var queryParameters: [String: String]? {
+        guard
+            let components = URLComponents(url: self, resolvingAgainstBaseURL: true),
+            let queryItems = components.queryItems else { return nil }
+        return queryItems.reduce(into: [String: String]()) { (result, item) in
+            result[item.name] = item.value
+        }
+    }
 }

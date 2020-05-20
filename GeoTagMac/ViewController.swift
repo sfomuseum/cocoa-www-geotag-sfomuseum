@@ -79,6 +79,14 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
             let server_error = notification.object as! Error
                                                 self.showAlert(message: server_error.localizedDescription)
         }
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue:"oembedURL"),
+                                               object: nil,
+                                               queue: .main) { (notification) in
+                                     
+            let oembed_url = notification.object as! String
+            self.executeJS(target: "sfomuseum.webkit.loadOEmbedURL", body: oembed_url)
+        }
     }
 
     override var representedObject: Any? {
@@ -193,6 +201,10 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
                     self.oauth2_access_token = credential.oauthToken
                     self.executeJS(target: "sfomuseum.webkit.setAccessToken", body: credential.oauthToken)
 
+                    // TO DO CHECK FOR oembed URL AS QUERY PARAM in url
+                    // AND NOTIFY THE WEB/JS APP IF PRESENT
+                    // self.executeJS(target: "sfomuseum.webkit.loadOEmbedURL", body: oembed_url)
+                    
                 case .failure(let error):
                     self.showAlert(message:error.localizedDescription)
                     return
