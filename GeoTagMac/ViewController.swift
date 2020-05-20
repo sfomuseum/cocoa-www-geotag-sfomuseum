@@ -26,8 +26,8 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.frame.size.width = 800
-        self.view.frame.size.height = 1000
+        self.view.frame.size.width = 1024
+        self.view.frame.size.height = 800
         
         let wk_conf = WKWebViewConfiguration()
 
@@ -189,7 +189,7 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
                                 
                 switch result {
                 case .success(let (credential, _, _)):
-                    print("GOT ACCESS TOKEN")
+                    // print("GOT ACCESS TOKEN", credential.oauthToken)
                     self.oauth2_access_token = credential.oauthToken
                     self.executeJS(target: "sfomuseum.webkit.setAccessToken", body: credential.oauthToken)
 
@@ -200,6 +200,10 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
         }
         
     }
+    
+    // This is left here as a reference - it is currently not being used
+    // Also there doesn't appear to be any way to make `MKGeoJSONFeature` Encodable
+    // because... computers? (20200519/thisisaaronland)
     
     func publishData(body: String) -> Void {
         

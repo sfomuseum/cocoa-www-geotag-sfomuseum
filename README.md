@@ -1,5 +1,7 @@
 # cocoa-www-geotag-sfomuseum
 
+![](docs/images/geotag-twopane.png)
+
 Experimental work to wrap the [sfomuseum/go-www-geotag-sfomuseum](https://github.com/sfomuseum/go-www-geotag-sfomuseum) application in standalone MacOS binary.
 
 ## Important
