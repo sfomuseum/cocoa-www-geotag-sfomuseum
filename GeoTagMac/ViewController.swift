@@ -11,6 +11,7 @@ import WebKit
 import MapKit
 
 import OAuthSwift
+import OAuth2Wrapper
 
 class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHandler {
     
@@ -20,11 +21,17 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
     
     var oauth2: OAuthSwift?
     
+    let oauth2_id = "geotag://access_token"
     let oauth2_callback_url = "geotag://oauth2"
-    var oauth2_access_token: String?
-
+    
+    var oauth2_wrapper: OAuth2Wrapper?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let wrapper = OAuth2Wrapper(id: self.oauth2_id, callback_url: self.oauth2_callback_url)
+        // wrapper.logger.logLevel = .debug
+        self.oauth2_wrapper = wrapper
         
         self.view.frame.size.width = 1024
         self.view.frame.size.height = 800
@@ -109,7 +116,7 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
     
     func loadApplication(url:URL) {
         
-        print("LOAD APPLICATION")
+        self.app.logger.debug("Load application.")
         
         WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
             records.forEach { record in
@@ -125,93 +132,24 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
         webView.load(request)
     }
     
-    func webView(_ webView: WKWebView,
-      didFinish navigation: WKNavigation!) {
-      print("FINISHED LOADING WEBPAGE")
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 
-        self.getAccessToken()
+        self.app.logger.debug("Finished loading webpage.")
+        
+        func gotAccessToken(rsp: Result<OAuthSwiftCredential, Error>) {
+            
+            switch rsp {
+            case .failure(let error):
+                print("SAD", error)
+                self.showAlert(message:error.localizedDescription)
+            case .success(let credential):
+                self.executeJS(target: "sfomuseum.webkit.setAccessToken", body: credential.oauthToken)
+            }
+        }
+        
+        self.oauth2_wrapper!.GetAccessToken(completion: gotAccessToken)
     }
     
-    func getAccessToken(){
-        
-        print("GET ACCESS TOKEN")
-        // check for locally stored token
-        // ensure token validity
-        
-        self.getNewAccessToken()
-    }
-    
-    func getNewAccessToken(){
-        
-        let oauth2_auth_url = Bundle.main.object(forInfoDictionaryKey: "OAuth2AuthURL") as? String
-        
-        let oauth2_token_url = Bundle.main.object(forInfoDictionaryKey: "OAuth2TokenURL") as? String
-        
-        let oauth2_client_id = Bundle.main.object(forInfoDictionaryKey: "OAuth2ClientID") as? String
-        
-        let oauth2_client_secret = Bundle.main.object(forInfoDictionaryKey: "OAuth2ClientSecret") as? String
-        
-        let oauth2_scope = Bundle.main.object(forInfoDictionaryKey: "OAuth2Scope") as? String
-        
-        if oauth2_auth_url == nil || oauth2_auth_url == "" {
-            showAlert(message: "OAuth2AuthURL")
-            return
-        }
-        
-        if oauth2_token_url == nil || oauth2_token_url == "" {
-            showAlert(message: "OAuth2TokenURL")
-            return
-        }
-        
-        if oauth2_client_id == nil || oauth2_client_id == "" {
-            showAlert(message: "OAuth2ClientID")
-            return
-        }
-        
-        if oauth2_client_secret == nil || oauth2_client_secret == "" {
-            showAlert(message: "OAuth2ClientSecret")
-            return
-        }
-        
-        if oauth2_scope == nil || oauth2_scope == "" {
-            showAlert(message: "OAuth2AuthURL")
-            return
-        }
-        
-        let oauth2_state = UUID().uuidString
-        
-        let oauth2 = OAuth2Swift(
-            consumerKey:    oauth2_client_id!,
-            consumerSecret: oauth2_client_secret!,
-            authorizeUrl:   oauth2_auth_url!,
-            accessTokenUrl: oauth2_token_url!,
-            responseType:   "token"
-        )
-        
-        self.oauth2 = oauth2
-        
-        oauth2.authorize(
-            withCallbackURL: self.oauth2_callback_url,
-            scope: oauth2_scope!,
-            state:oauth2_state) { result in
-                                
-                switch result {
-                case .success(let (credential, _, _)):
-                    // print("GOT ACCESS TOKEN", credential.oauthToken)
-                    self.oauth2_access_token = credential.oauthToken
-                    self.executeJS(target: "sfomuseum.webkit.setAccessToken", body: credential.oauthToken)
-
-                    // TO DO CHECK FOR oembed URL AS QUERY PARAM in url
-                    // AND NOTIFY THE WEB/JS APP IF PRESENT
-                    // self.executeJS(target: "sfomuseum.webkit.loadOEmbedURL", body: oembed_url)
-                    
-                case .failure(let error):
-                    self.showAlert(message:error.localizedDescription)
-                    return
-                }
-        }
-        
-    }
     
     // This is left here as a reference - it is currently not being used
     // Also there doesn't appear to be any way to make `MKGeoJSONFeature` Encodable
@@ -235,10 +173,11 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
             return
         }
         
-        print("FEATURES", features)
     }
     
     func showAlert(message: String){
+        
+        self.app.logger.info("\(message)")
         
         let alert = NSAlert()
         alert.messageText = "Error. There was a problem launching the application."
@@ -255,7 +194,7 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
             (data, error) in
             
             if let error = error {
-                print("JS failure: \(target), \(error)")
+                self.app.logger.error("JS failure: \(target), \(error)")
             }
         }
         
