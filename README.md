@@ -24,3 +24,4 @@ go build -mod vendor -o ../cocoa-www-geotag-sfomuseum/server.bundle/server cmd/s
 * https://github.com/sfomuseum/go-www-geotag-sfomuseum
 * https://github.com/sfomuseum/go-www-geotag-whosonfirst
 * https://github.com/sfomuseum/go-www-geotag
+* https://github.com/aaronland/swift-oauth2-wrapper
