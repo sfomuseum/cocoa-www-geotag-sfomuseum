@@ -9,6 +9,7 @@
 import Cocoa
 import WebKit
 import OAuthSwift
+import Logging
 
 enum ServerError: Error {
     case startupError
@@ -31,6 +32,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let server_task = Process()
     
+    let logger = Logger(label: "org.sfomuseum.geotag")
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setupApp()
     }
@@ -179,7 +182,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             env = env.uppercased()
             env = String(format: "GEOTAG_%@", env)
             
-            print(env, v)
+            self.logger.info("Set environment variable \(env) from \(v).")
             environment[env] = v
         }
         
@@ -209,7 +212,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         // please poll until server_url responds with 200
-        print("SLEEPING")
+        self.logger.info("SLEEPING")
         sleep(2)
         
         NotificationCenter.default.post(name: Notification.Name("serverListening"), object: url!)
@@ -251,7 +254,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
                 
             default:
-                print("Unhandled protocol request", url)
+                self.logger.error("Unhandled protocol request, \(url).")
             }
         }
     }
