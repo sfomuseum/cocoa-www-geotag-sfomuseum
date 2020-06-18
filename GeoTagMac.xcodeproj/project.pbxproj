@@ -13,8 +13,7 @@
 		4AA26A9F243E9CC000C9201B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA26A9D243E9CC000C9201B /* Main.storyboard */; };
 		4AA26AAB243E9CC000C9201B /* GeoTagMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA26AAA243E9CC000C9201B /* GeoTagMacTests.swift */; };
 		4AA26AD0243EA01A00C9201B /* server.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4AA26ACF243EA01A00C9201B /* server.bundle */; };
-		4AC3F6DF249420D000445C2B /* OAuth2Wrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC3F6DE249420D000445C2B /* OAuth2Wrapper */; };
-		4AC3F6E2249423DC00445C2B /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC3F6E1249423DC00445C2B /* Logging */; };
+		4AA56CEF249BFC2C007998D9 /* OAuth2Wrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA56CEE249BFC2C007998D9 /* OAuth2Wrapper */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AC3F6E2249423DC00445C2B /* Logging in Frameworks */,
-				4AC3F6DF249420D000445C2B /* OAuth2Wrapper in Frameworks */,
+				4AA56CEF249BFC2C007998D9 /* OAuth2Wrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +119,7 @@
 			);
 			name = GeoTagMac;
 			packageProductDependencies = (
-				4AC3F6DE249420D000445C2B /* OAuth2Wrapper */,
-				4AC3F6E1249423DC00445C2B /* Logging */,
+				4AA56CEE249BFC2C007998D9 /* OAuth2Wrapper */,
 			);
 			productName = GeoTagMac;
 			productReference = 4AA26A94243E9CBC00C9201B /* GeoTagMac.app */;
@@ -175,8 +172,7 @@
 			);
 			mainGroup = 4AA26A8B243E9CBC00C9201B;
 			packageReferences = (
-				4AC3F6DD249420D000445C2B /* XCRemoteSwiftPackageReference "swift-oauth2-wrapper" */,
-				4AC3F6E0249423DC00445C2B /* XCRemoteSwiftPackageReference "swift-log" */,
+				4AA56CED249BFC2C007998D9 /* XCRemoteSwiftPackageReference "swift-oauth2-wrapper" */,
 			);
 			productRefGroup = 4AA26A95243E9CBC00C9201B /* Products */;
 			projectDirPath = "";
@@ -480,34 +476,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4AC3F6DD249420D000445C2B /* XCRemoteSwiftPackageReference "swift-oauth2-wrapper" */ = {
+		4AA56CED249BFC2C007998D9 /* XCRemoteSwiftPackageReference "swift-oauth2-wrapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aaronland/swift-oauth2-wrapper";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
-			};
-		};
-		4AC3F6E0249423DC00445C2B /* XCRemoteSwiftPackageReference "swift-log" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-log";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
+				minimumVersion = 0.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4AC3F6DE249420D000445C2B /* OAuth2Wrapper */ = {
+		4AA56CEE249BFC2C007998D9 /* OAuth2Wrapper */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4AC3F6DD249420D000445C2B /* XCRemoteSwiftPackageReference "swift-oauth2-wrapper" */;
+			package = 4AA56CED249BFC2C007998D9 /* XCRemoteSwiftPackageReference "swift-oauth2-wrapper" */;
 			productName = OAuth2Wrapper;
-		};
-		4AC3F6E1249423DC00445C2B /* Logging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4AC3F6E0249423DC00445C2B /* XCRemoteSwiftPackageReference "swift-log" */;
-			productName = Logging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

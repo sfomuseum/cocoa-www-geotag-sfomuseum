@@ -64,22 +64,26 @@
 	<false/>
 	<key>NextzenAPIKey</key>
 	<string>$(NEXTZEN_API_KEY)</string>
-	<key>OAuth2ClientID</key>
-	<string>$(OAUTH2_CLIENT_ID)</string>
-	<key>OAuth2ClientSecret</key>
-	<string>$(OAUTH2_CLIENT_SECRET)</string>
-	<key>OAuth2Scope</key>
-	<string>$(OAUTH2_SCOPE)</string>
+	<key>GitHubAuthURL</key>
+	<string>$(GITHUB_AUTH_URL)</string>
+	<key>GitHubTokenURL</key>
+	<string>$(GITHUB_TOKEN_URL)</string>
+	<key>GitHubClientID</key>
+	<string>$(GITHUB_CLIENT_ID)</string>
+	<key>GitHubClientSecret</key>
+	<string>$(GITHUB_CLIENT_SECRET)</string>
+	<key>GitHubScope</key>
+	<string>$(GITHUB_SCOPE)</string>
+	<key>GitHubCallbackURL</key>
+	<string>$(GITHUB_CALLBACK_URL)</string>
+	<key>GitHubKeychainLabel</key>
+	<string>$(GITHUB_KEYCHAIN_LABEL)</string>
 	<key>OEmbedEndpoints</key>
 	<string>$(OEMBED_ENDPOINTS)</string>
 	<key>PlaceholderEndpoint</key>
 	<string>$(PLACEHOLDER_ENDPOINT)</string>
 	<key>WriterURI</key>
 	<string>$(WRITER_URI)</string>
-	<key>OAuth2AuthURL</key>
-	<string>$(OAUTH2_AUTH_URL)</string>
-	<key>OAuth2TokenURL</key>
-	<string>$(OAUTH2_TOKEN_URL)</string>
 	<key>WhosOnFirstWriterURI</key>
 	<string>$(WHOSONFIRST_WRITER_URI)</string>
 	<key>WhosOnFirstReaderURI</key>

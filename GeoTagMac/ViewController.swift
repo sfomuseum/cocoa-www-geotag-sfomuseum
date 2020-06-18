@@ -20,17 +20,25 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
     @IBOutlet var webView: WKWebView!
     
     var oauth2: OAuthSwift?
-    
-    let oauth2_id = "geotag://access_token"
-    let oauth2_callback_url = "geotag://oauth2"
-    
     var oauth2_wrapper: OAuth2Wrapper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let wrapper = OAuth2Wrapper(id: self.oauth2_id, callback_url: self.oauth2_callback_url)
-        // wrapper.logger.logLevel = .debug
+        let result = NewOAuth2WrapperConfigFromBundle(bundle: Bundle.main, prefix: "GitHub")
+        
+        if case .failure(let error) = result {
+            print("SAD", error)
+            return
+        }
+        
+        guard case .success(let config) = result else {
+            print("MISSING CONFIG")
+            return
+        }
+
+        let wrapper = OAuth2Wrapper(config: config)
+        wrapper.logger.logLevel = .debug
         self.oauth2_wrapper = wrapper
         
         self.view.frame.size.width = 1024
