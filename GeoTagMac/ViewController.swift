@@ -38,7 +38,7 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
         }
 
         let wrapper = OAuth2Wrapper(config: config)
-        // wrapper.logger.logLevel = .debug
+        wrapper.logger.logLevel = .debug
         self.oauth2_wrapper = wrapper
         
         self.view.frame.size.width = 1024
