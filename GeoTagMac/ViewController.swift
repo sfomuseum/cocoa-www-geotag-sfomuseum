@@ -37,6 +37,9 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
             return
         }
 
+        // the spec says this must be "code" but everyone (including OAuthSwift)
+        // uses "token" by default... (20200826/thisisaaronland)
+        
         config.ResponseType = "code"
         
         let wrapper = OAuth2Wrapper(config: config)
