@@ -32,11 +32,13 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
             return
         }
         
-        guard case .success(let config) = result else {
+        guard case .success(var config) = result else {
             print("MISSING CONFIG")
             return
         }
 
+        config.ResponseType = "code"
+        
         let wrapper = OAuth2Wrapper(config: config)
         wrapper.logger.logLevel = .debug
         self.oauth2_wrapper = wrapper
